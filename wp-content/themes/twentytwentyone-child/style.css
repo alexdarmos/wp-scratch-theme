@@ -1,0 +1,22 @@
+/*
+Theme Name: Twenty Twenty-One Child
+Description: Twenty Twenty-One Child Theme
+Author: Alex Darmos
+Author URI: https://wordpress.org/
+Template: twentytwentyone
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: twentytwentyonechild
+*/
+
+
+
+
+body {
+    background: #00ffff;
+}
+
+h1.site-title {
+    color: red;
+}
