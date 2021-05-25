@@ -16,6 +16,10 @@ body {
     background-color: #fff091;
     font-family: "Open Sans", sans-serif;
   }
+
+body.postid-1567 {
+  background: purple;
+}
   
   body.tag-50,
   body.category-9 {

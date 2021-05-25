@@ -14,8 +14,13 @@ add_theme_support( 'starter-content' );
 
 // Load in our CSS
 function wphierarchy_enqueue_styles() {
+    //add external stylesheet for google font
+    wp_enqueue_style( 'odibee-font-css', 'https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap', [], '', 'all' );
+
     //time parameter will prevent cache. In live, you would replace witha  version# e.g. 1.1
-    wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/style.css', [], time(), 'all' );
+    wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/style.css', [ 'odibee-font-css' ], time(), 'all' );
+
+    wp_enqueue_style( 'custom-css', get_stylesheet_directory_uri() . '/assets/css/custom.css', [ 'main-css' ], time(), 'all' );
 }
 add_action('wp_enqueue_scripts', 'wphierarchy_enqueue_styles');
 

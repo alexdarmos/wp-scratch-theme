@@ -1,8 +1,8 @@
-<!-- Archive.php Displays categories, tags, dates, authors -Generic all catching page- -->
+<!-- Taxonomy.php works for Custom Post Types, fallback is archive.php- -->
 
 <?php get_header('splash'); ?>
 
-    <div id="primary" class="content-area">
+    <div id="primary" class="content-area narrow">
         <main id="main" class="site-main" role="main">
             <h1><?php the_archive_title('');?></h1>
             
@@ -26,7 +26,5 @@
         </main>
 
     </div>
-
-    <?php get_sidebar(); ?>
 
     <?php get_footer(); ?>

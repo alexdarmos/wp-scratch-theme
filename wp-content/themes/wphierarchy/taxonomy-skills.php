@@ -1,15 +1,17 @@
-<!-- Archive.php Displays categories, tags, dates, authors -Generic all catching page- -->
+<!-- Custom taxonomy page, fallback taxonomy.php then archive.php -->
 
-<?php get_header('splash'); ?>
+<?php get_header(); ?>
 
-    <div id="primary" class="content-area">
+    <div id="primary" class="content-area extended">
+
         <main id="main" class="site-main" role="main">
-            <h1><?php the_archive_title('');?></h1>
+
+            <h1><?php the_archive_title();?></h1>
             
             <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
 
                 <!-- Retrieves the content.php file from template-parts folder -->
-                <?php get_template_part( 'template-parts/content-posts', get_post_format() );?>
+                <?php get_template_part( 'template-parts/content', 'portfolio' );?>
 
 
             <?php endwhile; else : ?>
@@ -20,13 +22,12 @@
             <?php endif; ?>
 
             <?php echo paginate_links(); ?>
-
-                <p>Template: taxonomy.php</p>
-
+            <div style="clear:both;">
+            <p>Template: taxonomy-skills.php</p>
+            </div>
         </main>
-
+        
     </div>
-
-    <?php get_sidebar(); ?>
-
+    
     <?php get_footer(); ?>
+    
