@@ -12,6 +12,15 @@ add_theme_support( 'custom-logo' );
 add_theme_support( 'customize-selective-refresh-widgets' );
 add_theme_support( 'starter-content' );
 
+// Load in our JS
+function wphierarchy_enqueue_scripts() {
+
+    // wp_enqueue_script( 'theme-js', get_stylesheet_directory_uri() . '/assets/js/theme.js', array(), false, false );
+
+        wp_enqueue_script( 'jquery-theme-js', get_stylesheet_directory_uri() . '/assets/js/jquery.theme.js', ['jquery'], time(), true );
+}
+add_action('wp_enqueue_scripts', 'wphierarchy_enqueue_scripts');
+
 // Load in our CSS
 function wphierarchy_enqueue_styles() {
     //add external stylesheet for google font
@@ -23,7 +32,6 @@ function wphierarchy_enqueue_styles() {
     wp_enqueue_style( 'custom-css', get_stylesheet_directory_uri() . '/assets/css/custom.css', [ 'main-css' ], time(), 'all' );
 }
 add_action('wp_enqueue_scripts', 'wphierarchy_enqueue_styles');
-
 
 // Register Menu Locations
 register_nav_menus( [
